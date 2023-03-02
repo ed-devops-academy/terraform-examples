@@ -13,8 +13,11 @@ module "vpc" {
 }
 
 resource "aws_instance" "my-instance" {
-  name          = "My instance"
   ami           = module.vpc.ami_id
   subnet_id     = module.vpc.subnet_id
   instance_type = "t2.micro"
+
+  tags = {
+    Name = "my-instance"
+  }
 }
