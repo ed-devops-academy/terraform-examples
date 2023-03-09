@@ -18,3 +18,7 @@ variable "vm_computer_name" {
   default     = "myvm"
   description = "Hostname of the virtual machine resource."
 }
+
+locals {
+  current_time = formatdate("YYMMDD", timestamp())
+}
